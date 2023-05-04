@@ -6,20 +6,20 @@ let gymsRepository: InMemoryGymsRepository
 let sut: CreateGymUseCase
 
 describe('Create Gym Use Case', () => {
-    beforeEach(() => {
-        gymsRepository = new InMemoryGymsRepository()
-        sut = new CreateGymUseCase(gymsRepository)
+  beforeEach(() => {
+    gymsRepository = new InMemoryGymsRepository()
+    sut = new CreateGymUseCase(gymsRepository)
+  })
+
+  it('should to create gym', async () => {
+    const { gym } = await sut.execute({
+      title: 'JavaScript Gym',
+      description: null,
+      phone: null,
+      latitude: -24.027347,
+      longitude: -46.5066368,
     })
 
-    it('should to create gym', async () => {
-        const { gym } = await sut.execute({
-            title: 'JavaScript Gym',
-            description: null,
-            phone: null,
-            latitude: -27.2092052,
-            longitude: -49.6401091,
-        })
-
-        expect(gym.id).toEqual(expect.any(String))
-    })
+    expect(gym.id).toEqual(expect.any(String))
+  })
 })
