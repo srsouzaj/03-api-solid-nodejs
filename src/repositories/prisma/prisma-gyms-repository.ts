@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { prisma } from "@/lib/prisma";
 import { Gym, Prisma } from "@prisma/client";
 import { FindManyNearbyParams, GymsRepository } from "../gyms-repository";
