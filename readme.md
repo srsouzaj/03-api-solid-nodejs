@@ -46,7 +46,7 @@ Segue os comandos para baixar e executar o projeto na sua máquina:
 git clone https://github.com/srsouzaj/03-api-solid-nodejs.git
 
 # Acessar o projeto no terminal
-$ cd igym
+$ cd 03-api-solid-nodejs
 
 # Instalar as dependências
 $ npm install
