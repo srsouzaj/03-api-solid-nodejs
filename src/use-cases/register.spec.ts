@@ -5,7 +5,6 @@ import { expect, describe, it, beforeEach } from 'vitest'
 import { RegisterUseCase } from './register'
 
 let usersRepository: InMemoryUsersRepository
-
 let sut: RegisterUseCase
 
 describe('Register Use Case', () => {
@@ -20,6 +19,7 @@ describe('Register Use Case', () => {
       email: 'johndoe@example.com',
       password: '123456',
     })
+
     expect(user.id).toEqual(expect.any(String))
   })
 
@@ -29,15 +29,18 @@ describe('Register Use Case', () => {
       email: 'johndoe@example.com',
       password: '123456',
     })
+
     const isPasswordCorrectlyHashed = await compare(
       '123456',
       user.password_hash,
     )
+
     expect(isPasswordCorrectlyHashed).toBe(true)
   })
 
   it('should not be able to register with same email twice', async () => {
     const email = 'johndoe@example.com'
+
     await sut.execute({
       name: 'John Doe',
       email,

@@ -31,6 +31,7 @@ export class InMemoryCheckInsRepository implements CheckInsRepository {
     if (!checkInOnSameDate) {
       return null
     }
+
     return checkInOnSameDate
   }
 
@@ -52,7 +53,9 @@ export class InMemoryCheckInsRepository implements CheckInsRepository {
       validated_at: data.validated_at ? new Date(data.validated_at) : null,
       created_at: new Date(),
     }
+
     this.items.push(checkIn)
+
     return checkIn
   }
 
